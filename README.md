@@ -93,14 +93,25 @@ Once an MPI library is installed, you should be able to install the
 python3 -m pip install --user amdahl
 ```
 
-or use a [virtual environment](#python-venv)
+or use a virtual environment
+
+> **Note:**
+> This installs `amdahl` inside the virtual environment, ensuring
+> consistent versions and avoiding interference from system or
+> user-level Python packages.
 
 ```shell
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv venv_amdahl
+source venv_amdahl/bin/activate
 python3 -m pip install amdahl
 ```
 
+Optional: Remove the virtual environment
+
+```shell
+deactivate
+rm -rf venv_amdahl
+```
 ## Usage
 
 Once installed, you can run the program using
@@ -120,50 +131,6 @@ with 0.8 parallel proportion of the workload.
   Hello, World! I am process 1 of 2. I will do parallel 'work' for 14 seconds.
 
 Total execution time (according to rank 0): 16 seconds
-```
-
-## Using a Python Virtual Environment (Recommended) {#python-venv}
-
-### Create and activate the environment
-
-```shell
-module load python SciPy-bundle
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### Install `amdahl`
-
-> **Note:**
-> This installs `amdahl` inside the virtual environment, ensuring
-> consistent versions and avoiding interference from system or
-> user-level Python packages.
-
-```shell
-python3 -m pip install amdahl
-```
-
-### Optional: Validate the virtual environment
-
-```shell
-which python3
-```
-
-```output
-.venv/bin/python3
-```
-
-### Run the program
-
-```shell
-mpirun -np 2 amdahl
-```
-
-### Optional: Remove the virtual environment
-
-```shell
-deactivate
-rm -rf .venv
 ```
 
 <!-- links -->

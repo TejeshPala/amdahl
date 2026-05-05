@@ -114,6 +114,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+./venv_amdahl
 env/
 venv/
 ENV/
