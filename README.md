@@ -114,6 +114,50 @@ with 0.8 parallel proportion of the workload.
 Total execution time (according to rank 0): 16 seconds
 ```
 
+## Using a Python Virtual Environment (Recommended)
+
+### Create and activate the environment
+
+```shell
+module load python SciPy-bundle
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### Install `amdahl`
+
+> **Note:**
+> This installs `amdahl` inside the virtual environment, ensuring
+> consistent versions and avoiding interference from system or
+> user-level Python packages.
+
+```shell
+python -m pip install amdahl
+```
+
+### Optional: Validate the virtual environment
+
+```shell
+which python
+```
+
+```output
+.venv/bin/python
+```
+
+### Run the program
+
+```shell
+mpirun -np 2 amdahl
+```
+
+### Optional: Remove the virtual environment
+
+```shell
+deactivate
+rm -rf .venv
+```
+
 <!-- links -->
 [MPICH]:   https://www.mpich.org
 [OpenMPI]: https://www.open-mpi.org
