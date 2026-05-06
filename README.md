@@ -93,11 +93,11 @@ Once an MPI library is installed, you should be able to install the
 python3 -m pip install --user amdahl
 ```
 
-or use a virtual environment
+Alternatively, you can use a virtual environment:
 
 > **Note:**
-> This installs `amdahl` inside the virtual environment, ensuring
-> consistent versions and avoiding interference from system or
+> This installs `amdahl` (and its dependencies) inside the virtual environment,
+> ensuring consistent versions and avoiding interference from system or
 > user-level Python packages.
 
 ```shell
@@ -106,12 +106,14 @@ source venv_amdahl/bin/activate
 python3 -m pip install amdahl
 ```
 
-Optional: Remove the virtual environment
+Once you are finished using the virtual environment, you can `deactivate` it and,
+if desired, remove it:
 
 ```shell
 deactivate
 rm -rf venv_amdahl
 ```
+
 ## Usage
 
 Once installed, you can run the program using
